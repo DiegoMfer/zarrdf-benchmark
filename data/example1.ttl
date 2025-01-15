@@ -1,0 +1,22 @@
+@prefix ex: <http://example.org/> .
+
+# Define some individuals and relationships
+ex:JohnDoe a ex:Person ;
+    ex:hasName "John Doe" ;
+    ex:hasAge 30 ;
+    ex:hasFriend ex:JaneDoe .
+
+ex:JaneDoe a ex:Person ;
+    ex:hasName "Jane Doe" ;
+    ex:hasAge 28 ;
+    ex:hasFriend ex:JohnDoe .
+
+# Another example with a product
+ex:Product123 a ex:Product ;
+    ex:hasName "Gadget X" ;
+    ex:hasPrice 99.99 ;
+    ex:hasManufacturer ex:CompanyABC .
+
+ex:CompanyABC a ex:Company ;
+    ex:hasName "Company ABC" ;
+    ex:hasLocation "New York, USA" .

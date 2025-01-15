@@ -1,0 +1,6 @@
+docker run -it --rm --name hdt -v $(pwd):/data aammar/hdt-java rdf2hdt.sh /data/1-lubm.ttl.gz /data/1-lubm.hdt
+docker run -it --rm --name hdt -v $(pwd):/data aammar/hdt-java rdf2hdt.sh /data/example1.ttl.gz /data/example1.hdt
+
+
+docker run -it --rm -v "$(pwd)":/data rfdhdt/hdt-cpp hdtSearch /data/example1.hdt -q "? ? ?"
+docker run -it --rm -v "$(pwd)":/data rfdhdt/hdt-cpp hdtSearch /data/1-lubm.hdt -q "? ? ?"
