@@ -2,7 +2,7 @@
 
 # Set the source and destination directories as variables
 source_dir="./data"  # Change this to your source directory
-dest_dir="./hdt-benchmark/data"  # Change this to your destination directory
+dest_dir="./benchmark-hdt/data"  # Change this to your destination directory
 
 # Check if the source directory exists
 if [ ! -d "$source_dir" ]; then

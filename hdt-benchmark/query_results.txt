@@ -1,2 +1,0 @@
-15 results in 115 us
-100545 results in 569 ms 97 us
