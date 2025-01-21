@@ -16,5 +16,3 @@ RUN apt-get update && apt-get install -y bash time
 # Expose the port for the LDF server
 EXPOSE 5000
 
-# Default entrypoint for the Docker container
-ENTRYPOINT ["sh", "-c"]

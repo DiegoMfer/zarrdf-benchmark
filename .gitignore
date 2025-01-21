@@ -1,2 +1,3 @@
 benchmark-hdt/data/
 benchmark-tpf/data/
+data/*.hdt

@@ -1,16 +1,25 @@
 #!/bin/bash
 
-# Ensure that CONFIG_FILE and QUERY_FILE are passed as arguments
-if [ "$#" -ne 2 ]; then
-  echo "Usage: $0 <CONFIG_FILE> <QUERY>"
+if [ $# -lt 3 ]; then
+  echo "Usage: $0 <query> <config_json> <repeat_count>"
   exit 1
 fi
 
-# Set configuration and query file variables
-CONFIG_FILE=$1
-QUERY=$2
+query=$1
+config_json=$2
+repeat_count=$3
 
-# Run the Docker container with the provided config and query files
-docker run -it --rm -v "$(pwd)/config:/app/config" -v "$(pwd)/data:/app/data" tpf-benchmark sh -c \
-  "ldf-server /app/config/$CONFIG_FILE 5000 4 && time comunica-sparql http://localhost:5000/myhdt $QUERY"
+docker stop benchmark_server
+docker rm benchmark_server
 
+docker run -d --name benchmark_server -v "$(pwd)/data:/app" -p 5000:5000 tpf-benchmark sh -c "ldf-server $config_json 5000 4"
+
+sleep 5
+
+for i in $(seq 1 $repeat_count)
+do
+  time comunica-sparql http://localhost:5000/myhdt "$query"
+done
+
+docker stop benchmark_server
+docker rm benchmark_server
