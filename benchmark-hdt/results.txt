@@ -1,0 +1,5 @@
+query="? ? ?", dataset="1-lubm.hdt", result="100545 results in 574 ms 311 us"
+query="? ? ?", dataset="1-lubm.hdt", result="100545 results in 582 ms 614 us"
+query="? ? ?", dataset="1-lubm.hdt", result="100545 results in 543 ms 761 us"
+query="? ? ?", dataset="1-lubm.hdt", result="100545 results in 526 ms 767 us"
+query="? ? ?", dataset="1-lubm.hdt", result="100545 results in 543 ms 982 us"
