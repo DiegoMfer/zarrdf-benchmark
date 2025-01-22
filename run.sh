@@ -3,14 +3,14 @@
 ./prepare_files.sh
 
 
-# First benchmark
+# First benchmark ---------------------------------------
 cd benchmark-hdt
-
+# add queries here
 ./run_query.sh '? ? ?' 1-lubm.hdt 5
 
 cd ..
 
-# Second benchmark
+# Second benchmark --------------------------------------
 cd benchmark-tpf
 ./build_and_prepare.sh # Creates a new config for each dataset, that is how you tell the Triple pattern fragment where to find the hdt file
 
