@@ -1,3 +1,4 @@
 benchmark-hdt/data/
 benchmark-tpf/data/
+benchmark-sparql/data/
 data/*.hdt

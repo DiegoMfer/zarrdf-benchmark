@@ -1,3 +1,4 @@
+# This is necessary for running all of the benchmarks
 ./convert_ttl_to_hdt.sh
 ./prepare_files.sh
 

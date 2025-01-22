@@ -10,7 +10,7 @@ FILE_NAME=$2
 REPEAT_COUNT=$3
 
 # Create or empty the results file
-RESULTS_FILE="results.txt"
+RESULTS_FILE="hdt-benchmark_results.txt"
 > "$RESULTS_FILE"
 
 for i in $(seq 1 $REPEAT_COUNT)
