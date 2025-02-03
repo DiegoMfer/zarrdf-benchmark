@@ -1,5 +1,5 @@
-query="? ? ?", dataset="1-lubm.hdt", result="100545 results in 562 ms 884 us"
-query="? ? ?", dataset="1-lubm.hdt", result="100545 results in 539 ms 674 us"
-query="? ? ?", dataset="1-lubm.hdt", result="100545 results in 592 ms 501 us"
-query="? ? ?", dataset="1-lubm.hdt", result="100545 results in 590 ms 67 us"
-query="? ? ?", dataset="1-lubm.hdt", result="100545 results in 541 ms 810 us"
+query="? ? ?", dataset="1-lubm.hdt", result="100545 results in 1 sec 16 ms 965 us"
+query="? ? ?", dataset="1-lubm.hdt", result="100545 results in 998 ms 547 us"
+query="? ? ?", dataset="1-lubm.hdt", result="100545 results in 978 ms 699 us"
+query="? ? ?", dataset="1-lubm.hdt", result="100545 results in 1 sec 30 ms 588 us"
+query="? ? ?", dataset="1-lubm.hdt", result="100545 results in 970 ms 980 us"
