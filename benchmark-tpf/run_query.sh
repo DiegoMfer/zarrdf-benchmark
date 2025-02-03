@@ -10,7 +10,7 @@ config_json=$2
 repeat_count=$3
 
 # Define dataset type (e.g., "json")
-dataset=config_json
+dataset=$config_json
 
 # Stop and remove any existing benchmark_server container
 docker stop benchmark_server

@@ -1,0 +1,304 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dbr: <http://dbpedia.org/resource/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix wdt: <http://www.wikidata.org/prop/direct/> .
+@prefix lol: <http://example.org/leagueoflegends/> .
+
+# Definición de conceptos (clases)
+lol:Character a rdf:Class .
+lol:City a rdf:Class .
+lol:Ability a rdf:Class .
+lol:Alliance a rdf:Class .
+lol:Enemy a rdf:Class .
+lol:Trait a rdf:Class .
+
+# Propiedades
+lol:hasAbility a rdf:Property .
+lol:hasAlliance a rdf:Property .
+lol:hasEnemy a rdf:Property .
+lol:hasTrait a rdf:Property .
+lol:birthPlace a rdf:Property .
+lol:occupation a rdf:Property .
+lol:hasSkill a rdf:Property .
+lol:wasBornIn a rdf:Property .
+lol:hasPower a rdf:Property .
+lol:hasRegion a rdf:Property .
+lol:hasNationality a rdf:Property .
+
+# Definición de personajes
+lol:Garen a lol:Character ;
+    dbo:birthPlace dbr:Demacia ;
+    lol:hasAbility lol:DecisiveStrike, lol:Judgment ;
+    lol:hasEnemy lol:Swain ;
+    lol:hasAlliance lol:JarvanIV ;
+    lol:hasTrait lol:Warrior, lol:Tank ;
+    dbo:occupation dbo:Warrior ;
+    wdt:P31 wd:Q5 ;
+    wdt:P19 dbr:Demacia .
+
+lol:Swain a lol:Character ;
+    dbo:birthPlace dbr:Noxus ;
+    lol:hasAbility lol:Demonflare, lol:Nevermove ;
+    lol:hasEnemy lol:Garen ;
+    lol:hasAlliance lol:Katarina ;
+    lol:hasTrait lol:Commander, lol:Mage ;
+    dbo:occupation dbo:Commander ;
+    wdt:P31 wd:Q5 ;
+    wdt:P19 dbr:Noxus .
+
+lol:Lux a lol:Character ;
+    dbo:birthPlace dbr:Demacia ;
+    lol:hasAbility lol:LightBinding, lol:FinalSpark ;
+    lol:hasAlliance lol:Garen ;
+    lol:hasEnemy lol:Katarina ;
+    lol:hasTrait lol:Support, lol:Mage ;
+    dbo:occupation dbo:Mage ;
+    wdt:P31 wd:Q5 ;
+    wdt:P19 dbr:Demacia .
+
+lol:Vi a lol:Character ;
+    dbo:birthPlace dbr:Zaun ;
+    lol:hasAbility lol:VaultBreak, lol:ExcessiveForce ;
+    lol:hasAlliance lol:Jinx ;
+    lol:hasEnemy lol:Swain ;
+    lol:hasTrait lol:Fighter, lol:Tank ;
+    dbo:occupation dbo:Enforcer ;
+    wdt:P31 wd:Q5 ;
+    wdt:P19 dbr:Zaun .
+
+lol:Ezreal a lol:Character ;
+    dbo:birthPlace dbr:Piltover ;
+    lol:hasAbility lol:EssenceFlux, lol:ArcaneShift ;
+    lol:hasAlliance lol:Lux ;
+    lol:hasEnemy lol:Katarina ;
+    lol:hasTrait lol:Marksman ;
+    dbo:occupation dbo:Explorer ;
+    wdt:P31 wd:Q5 ;
+    wdt:P19 dbr:Piltover .
+
+lol:Zed a lol:Character ;
+    dbo:birthPlace dbr:Ionia ;
+    lol:hasAbility lol:RazorShuriken, lol:LivingShadow ;
+    lol:hasEnemy lol:Shen ;
+    lol:hasAlliance lol:Kennen ;
+    lol:hasTrait lol:Assassin ;
+    dbo:occupation dbo:Assassin ;
+    wdt:P31 wd:Q5 ;
+    wdt:P19 dbr:Ionia .
+
+# Definición de habilidades (Abilities)
+lol:DecisiveStrike a lol:Ability ;
+    dbo:effect dbo:Damage ;
+    dbo:powerLevel 5 .
+
+lol:Judgment a lol:Ability ;
+    dbo:effect dbo:AreaDamage ;
+    dbo:powerLevel 6 .
+
+lol:LightBinding a lol:Ability ;
+    dbo:effect dbo:Stun ;
+    dbo:powerLevel 7 .
+
+lol:VaultBreak a lol:Ability ;
+    dbo:effect dbo:Knockback ;
+    dbo:powerLevel 5 .
+
+# Definición de alianzas
+lol:JarvanIV a lol:Character ;
+    lol:hasAlliance lol:Garen ;
+    lol:hasAlliance lol:Lux .
+
+lol:Katarina a lol:Character ;
+    lol:hasAlliance lol:Swain ;
+    lol:hasEnemy lol:Lux .
+
+# Definición de enemigos (Enemies)
+lol:Swain a lol:Character ;
+    lol:hasEnemy lol:Garen ;
+    lol:hasEnemy lol:Lux ;
+    lol:hasEnemy lol:Vi .
+
+lol:Garen a lol:Character ;
+    lol:hasEnemy lol:Swain ;
+    lol:hasEnemy lol:Katarina .
+
+lol:Vi a lol:Character ;
+    lol:hasEnemy lol:Swain ;
+    lol:hasEnemy lol:Ezreal .
+
+# Definición de ciudades (Cities)
+lol:Demacia a lol:City ;
+    dbo:capital dbr:Demacia ;
+    dbo:region dbr:Valoran ;
+    dbo:hasNationality wd:Q1860 .
+
+lol:Noxus a lol:City ;
+    dbo:capital dbr:Noxus ;
+    dbo:region dbr:Valoran ;
+    dbo:hasNationality wd:Q1860 .
+
+lol:Zaun a lol:City ;
+    dbo:capital dbr:Zaun ;
+    dbo:region dbr:Valoran ;
+    dbo:hasNationality wd:Q1860 .
+
+lol:Piltover a lol:City ;
+    dbo:capital dbr:Piltover ;
+    dbo:region dbr:Valoran ;
+    dbo:hasNationality wd:Q1860 .
+
+lol:Ionia a lol:City ;
+    dbo:capital dbr:Ionia ;
+    dbo:region dbr:Ionia ;
+    dbo:hasNationality wd:Q1860 .
+
+# Relación de ciudades con regiones
+lol:Demacia lol:hasRegion dbr:Valoran .
+lol:Noxus lol:hasRegion dbr:Valoran .
+lol:Zaun lol:hasRegion dbr:Zaun .
+lol:Piltover lol:hasRegion dbr:Valoran .
+lol:Ionia lol:hasRegion dbr:Ionia .
+
+
+# Más personajes de League of Legends
+
+lol:Ashe a lol:Character ;
+    dbo:birthPlace dbr:Freljord ;
+    lol:hasAbility lol:FrostShot, lol:EnchantedCrystalArrow ;
+    lol:hasAlliance lol:Sejuani ;
+    lol:hasEnemy lol:Trundle ;
+    lol:hasTrait lol:Marksman, lol:Archer ;
+    dbo:occupation dbo:Archer ;
+    wdt:P31 wd:Q5 ;
+    wdt:P19 dbr:Freljord .
+
+lol:Sejuani a lol:Character ;
+    dbo:birthPlace dbr:Freljord ;
+    lol:hasAlliance lol:Ashe ;
+    lol:hasEnemy lol:Trundle ;
+    lol:hasTrait lol:Tank, lol:Warrior ;
+    dbo:occupation dbo:Warrior ;
+    wdt:P31 wd:Q5 ;
+    wdt:P19 dbr:Freljord .
+
+lol:Trundle a lol:Character ;
+    dbo:birthPlace dbr:Freljord ;
+    lol:hasAbility lol:Chomp, lol:Subjugate ;
+    lol:hasEnemy lol:Ashe ;
+    lol:hasAlliance lol:Sejuani ;
+    lol:hasTrait lol:Troll, lol:Warrior ;
+    dbo:occupation dbo:Warrior ;
+    wdt:P31 wd:Q5 ;
+    wdt:P19 dbr:Freljord .
+
+lol:Kennen a lol:Character ;
+    dbo:birthPlace dbr:Ionia ;
+    lol:hasAbility lol:ThunderingShuriken, lol:LightningRush ;
+    lol:hasAlliance lol:Zed ;
+    lol:hasEnemy lol:Shen ;
+    lol:hasTrait lol:Marksman, lol:Assassin ;
+    dbo:occupation dbo:Assassin ;
+    wdt:P31 wd:Q5 ;
+    wdt:P19 dbr:Ionia .
+
+lol:Shen a lol:Character ;
+    dbo:birthPlace dbr:Ionia ;
+    lol:hasAbility lol:TwilightAssault, lol:StandUnited ;
+    lol:hasEnemy lol:Zed ;
+    lol:hasAlliance lol:Kennen ;
+    lol:hasTrait lol:Tank, lol:Support ;
+    dbo:occupation dbo:Protector ;
+    wdt:P31 wd:Q5 ;
+    wdt:P19 dbr:Ionia .
+
+lol:Akali a lol:Character ;
+    dbo:birthPlace dbr:Ionia ;
+    lol:hasAbility lol:FivePointStrike, lol:ShurikenFlip ;
+    lol:hasEnemy lol:Kennen ;
+    lol:hasAlliance lol:Zed ;
+    lol:hasTrait lol:Assassin ;
+    dbo:occupation dbo:Assassin ;
+    wdt:P31 wd:Q5 ;
+    wdt:P19 dbr:Ionia .
+
+# Más habilidades (Abilities)
+lol:FrostShot a lol:Ability ;
+    dbo:effect dbo:Slow ;
+    dbo:powerLevel 4 .
+
+lol:EnchantedCrystalArrow a lol:Ability ;
+    dbo:effect dbo:Stun ;
+    dbo:powerLevel 9 .
+
+lol:GlacialPrison a lol:Ability ;
+    dbo:effect dbo:Stun ;
+    dbo:powerLevel 8 .
+
+
+lol:Chomp a lol:Ability ;
+    dbo:effect dbo:Damage ;
+    dbo:powerLevel 6 .
+
+lol:Subjugate a lol:Ability ;
+    dbo:effect dbo:Heal ;
+    dbo:powerLevel 7 .
+
+lol:ThunderingShuriken a lol:Ability ;
+    dbo:effect dbo:Damage ;
+    dbo:powerLevel 6 .
+
+lol:LightningRush a lol:Ability ;
+    dbo:effect dbo:SpeedBoost ;
+    dbo:powerLevel 5 .
+
+lol:TwilightAssault a lol:Ability ;
+    dbo:effect dbo:Damage ;
+    dbo:powerLevel 6 .
+
+lol:StandUnited a lol:Ability ;
+    dbo:effect dbo:Heal ;
+    dbo:powerLevel 8 .
+
+lol:FivePointStrike a lol:Ability ;
+    dbo:effect dbo:Damage ;
+    dbo:powerLevel 5 .
+
+lol:ShurikenFlip a lol:Ability ;
+    dbo:effect dbo:Mobility ;
+    dbo:powerLevel 4 .
+
+# Más alianzas
+lol:Kennen a lol:Character ;
+    lol:hasAlliance lol:Shen ;
+    lol:hasEnemy lol:Zed .
+
+lol:Akali a lol:Character ;
+    lol:hasAlliance lol:Zed ;
+    lol:hasEnemy lol:Shen .
+
+# Más enemigos (Enemies)
+lol:Trundle a lol:Character ;
+    lol:hasEnemy lol:Ashe ;
+    lol:hasEnemy lol:Sejuani .
+
+lol:Sejuani a lol:Character ;
+    lol:hasEnemy lol:Trundle ;
+    lol:hasEnemy lol:Ashe .
+
+lol:Zed a lol:Character ;
+    lol:hasEnemy lol:Kennen ;
+    lol:hasEnemy lol:Shen .
+
+lol:Shen a lol:Character ;
+    lol:hasEnemy lol:Zed ;
+    lol:hasEnemy lol:Akali .
+
+# Definición de más ciudades (Cities)
+lol:Freljord a lol:City ;
+    dbo:capital dbr:Freljord ;
+    dbo:region dbr:Freljord ;
+    dbo:hasNationality wd:Q1860 .
+
+# Relación de ciudades con regiones (extendido)
+lol:Freljord lol:hasRegion dbr:Freljord .
